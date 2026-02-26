@@ -21,7 +21,7 @@ export const About = (t) => `
       <h2 class="section-title" data-reveal>${t.about.title}</h2>
       <div class="about-top">
         <div class="about-image" data-reveal="zoom">
-          <img src="/assets/melissa.jpg" alt="Melissa Massarenti">
+          <img src="assets/melissa.jpg" alt="Melissa Massarenti">
         </div>
         <div class="languages-box glass-card" data-reveal="right">
           <h3>${t.about.langTitle}</h3>
@@ -47,7 +47,7 @@ export const Education = (t) => `
         ${t.education.items.map((item) => `
           <div class="timeline-item" data-reveal="left">
             <div class="edu-logo-box">
-              <img src="/assets/${item.logo}" alt="Logo" class="edu-logo">
+              <img src="assets/${item.logo}" alt="Logo" class="edu-logo">
             </div>
             <div class="edu-content">
               <span class="date">${item.date}</span>
@@ -128,13 +128,13 @@ export const Passions = (t) => `
     <div class="container">
       <div class="paddock-header" data-reveal>
         <h2 class="section-title">${t.passions.title}</h2>
-        <img src="/assets/aci-logo.png" alt="ACI Sport Logo" class="aci-logo">
+        <img src="assets/aci-logo.png" alt="ACI Sport Logo" class="aci-logo">
       </div>
       
       <div class="official-intro">
         <div class="official-grid" style="margin-bottom: 60px;">
           <div class="official-image" data-reveal="left">
-            <img src="/assets/rally3.jpg" alt="Melissa Official">
+            <img src="assets/rally3.jpg" alt="Melissa Official">
           </div>
           <div class="official-text" data-reveal="right">
             <h3 class="accent-text" style="font-size: 1.8rem; margin-bottom: 20px;">${t.passions.storyTitle}</h3>
@@ -179,19 +179,19 @@ export const Passions = (t) => `
 
       <div class="race-slider" data-reveal="zoom">
         <div class="race-track">
-          <div class="race-item"><img src="/assets/rally2.jpg" alt="Rally Action 1"></div>
-          <div class="race-item"><img src="/assets/gara.jpg" alt="Melissa Work"></div>
-          <div class="race-item"><img src="/assets/rally1.jpg" alt="Rally Action 2"></div>
-          <div class="race-item"><img src="/assets/race4.jpg" alt="Rally Action 3"></div>
-          <div class="race-item"><img src="/assets/race5.jpg" alt="In action"></div>
-          <div class="race-item"><img src="/assets/race6.jpg" alt="Rally Action 4"></div>
+          <div class="race-item"><img src="assets/rally2.jpg" alt="Rally Action 1"></div>
+          <div class="race-item"><img src="assets/gara.jpg" alt="Melissa Work"></div>
+          <div class="race-item"><img src="assets/rally1.jpg" alt="Rally Action 2"></div>
+          <div class="race-item"><img src="assets/race4.jpg" alt="Rally Action 3"></div>
+          <div class="race-item"><img src="assets/race5.jpg" alt="In action"></div>
+          <div class="race-item"><img src="assets/race6.jpg" alt="Rally Action 4"></div>
           <!-- Duplicates -->
-          <div class="race-item"><img src="/assets/rally2.jpg" alt="Rally Action 1"></div>
-          <div class="race-item"><img src="/assets/gara.jpg" alt="Melissa Work"></div>
-          <div class="race-item"><img src="/assets/rally1.jpg" alt="Rally Action 2"></div>
-          <div class="race-item"><img src="/assets/race4.jpg" alt="Rally Action 3"></div>
-          <div class="race-item"><img src="/assets/race5.jpg" alt="In action"></div>
-          <div class="race-item"><img src="/assets/race6.jpg" alt="Rally Action 4"></div>
+          <div class="race-item"><img src="assets/rally2.jpg" alt="Rally Action 1"></div>
+          <div class="race-item"><img src="assets/gara.jpg" alt="Melissa Work"></div>
+          <div class="race-item"><img src="assets/rally1.jpg" alt="Rally Action 2"></div>
+          <div class="race-item"><img src="assets/race4.jpg" alt="Rally Action 3"></div>
+          <div class="race-item"><img src="assets/race5.jpg" alt="In action"></div>
+          <div class="race-item"><img src="assets/race6.jpg" alt="Rally Action 4"></div>
         </div>
       </div>
     </div>
