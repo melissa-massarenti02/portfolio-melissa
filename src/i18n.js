@@ -55,7 +55,25 @@ export const translations = {
             ]
         },
         skills: {
-            title: "Competenze Tecniche"
+            title: "Competenze Tecniche",
+            projectsTitle: "Progetti in Evidenza",
+            projectsIntro: "Alcuni dei progetti presentati sono prototipi privati...",
+            projects: [
+                {
+                    title: "Fanta-lessons: Gamified Study System",
+                    description: "Applicazione progettata per incrementare la produttività universitaria...",
+                    technologies: ["Javascript", "Firebase", "Node.js"],
+                    status: "Prototipo Privato",
+                    details: "🔒 Progetto Privato - IP Riservata"
+                },
+                {
+                    title: "Kylix: Embedded Alcohol Control System",
+                    description: "Sistema hardware/software integrato per locali pubblici...",
+                    technologies: ["C++", "ESP32", "Sensors", "PHP"],
+                    status: "Fase R&D",
+                    details: "🔒 Tesi Sperimentale - Brevetto in corso"
+                }
+            ],
         },
         passions: {
             title: "Passioni",
