@@ -8,8 +8,7 @@ export const Hero = (t) => `
         <h1>${t.hero.title}</h1>
         <p>${t.hero.description}</p>
         <div class="hero-cta">
-          <a href="#experience" class="btn btn-primary magnetic">${t.hero.cta}</a>
-        </div>
+          <a href="#projects" class="btn btn-primary magnetic">${t.hero.cta}</a>
       </div>
     </div>
   </section>
