@@ -123,6 +123,33 @@ export const ExperienceSkills = (t) => `
   </section>
 `;
 
+export const Projects = (t) => {
+  return `
+    <section id="projects" class="section container">
+      <h2 class="section-title" data-reveal>${t.projectsTitle}</h2>
+      <p style="margin-bottom: 2.5rem; color: var(--text-muted); max-width: 800px;" data-reveal>
+        ${t.projectsIntro}
+      </p>
+
+      <div class="projects-grid">
+        ${t.projects.map(project => `
+          <div class="glass-card project-card" data-reveal="zoom">
+            <div class="project-content">
+              <div class="project-status-badge">${project.status}</div>
+              <h3 style="margin-bottom: 15px;">${project.title}</h3>
+              <p style="font-size: 0.95rem; margin-bottom: 20px;">${project.description}</p>
+              <div class="project-tags">
+                ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
+              </div>
+            </div>
+            <p class="project-details-text">${project.details}</p>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  `;
+};
+
 export const Passions = (t) => `
   <section id="passions" class="section section-passions">
     <div class="container">

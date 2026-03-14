@@ -611,6 +611,66 @@ header .logo {
   color: var(--text-muted);
 }
 
+/* Project Grid & Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tag {
+  background: var(--accent-lilla-soft);
+  color: var(--text-dark);
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.project-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-lilla);
+  margin-bottom: 15px;
+}
+
+.project-status-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--accent-lilla);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-lilla);
+}
+
+.project-details-text {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+  padding-top: 15px;
+  margin-top: auto;
+}
+
 /* Paddock Enhanced */
 .paddock-header {
   display: flex;

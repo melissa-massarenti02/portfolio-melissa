@@ -160,7 +160,25 @@ export const translations = {
             ]
         },
         skills: {
-            title: "Technical Skills"
+            title: "Technical Skills",
+            projectsTitle: "Featured Projects",
+            projectsIntro: "Some of the projects presented are private prototypes or linked to academic research; for intellectual property and patent reasons, the source code is not public. However, I am available to discuss the technical architecture during an interview.",
+            projects: [
+                {
+                title: "Fanta-lessons: Gamified Study System",
+                description: "An application designed to boost university productivity through incentive logic and goal tracking. Focused on User Experience (UX) and the psychology of motivation.",
+                technologies: ["Javascript", "Firebase", "Node.js", "Vercel"],
+                status: "Private Prototype",
+                details: "🔒 Private Project - IP Reserved"
+                },
+                {
+                title: "Kylix: Embedded Alcohol Control",
+                description: "An integrated hardware/software system for public venues aimed at preventing underage drinking. Features flow management and automated verification, developed as an experimental thesis project.",
+                technologies: ["C++", "ESP32", "Sensors", "PHP", "MySQL"],
+                status: "R&D Phase",
+                details: "🔒 Experimental Thesis - Patent Pending"
+                }
+            ],
         },
         passions: {
             title: "Passions",
