@@ -668,7 +668,30 @@ header .logo {
   color: var(--text-muted);
   border-top: 1px solid var(--border-color);
   padding-top: 15px;
+  margin-top: auto; 
+  margin-bottom: 5px; 
+}
+
+.project-footer {
+  display: flex;
+  flex-direction: column; 
   margin-top: auto;
+}
+
+.project-date-bottom {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-lilla);
+  text-align: right;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
+.project-card:hover .project-date-bottom {
+  opacity: 1;
+  transform: translateX(-2px);
+  transition: var(--transition-smooth);
 }
 
 /* Paddock Enhanced */

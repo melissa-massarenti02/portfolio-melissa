@@ -123,7 +123,6 @@ export const ExperienceSkills = (t) => `
 `;
 
 export const Projects = (t) => {
-  // Accediamo ai dati dentro skills come hai impostato in i18n.js
   const data = t.skills; 
 
   return `
@@ -136,17 +135,27 @@ export const Projects = (t) => {
       <div class="projects-grid">
         ${data.projects.map(project => `
           <div class="glass-card project-card" data-reveal="zoom">
+            <div class="project-image">
+              <img src="${import.meta.env.BASE_URL}assets/${project.image}" alt="${project.title}">
+            </div>
+            
             <div class="project-content">
-              <span class="project-status-badge">${project.status}</span>
-              <h3 style="margin-top: 10px; margin-bottom: 15px;">${project.title}</h3>
-              <p style="font-size: 0.95rem; margin-bottom: 20px;">${project.description}</p>
+              <div class="project-header">
+                <span class="project-status-badge">${project.status}</span>
+              </div>
+              
+              <h3>${project.title}</h3>
+              <p>${project.description}</p>
+              
               <div class="project-tags">
                 ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
               </div>
             </div>
-            <p class="project-details-text" style="margin-top: auto; padding-top: 20px; font-size: 0.85rem; opacity: 0.8;">
-              ${project.details}
-            </p>
+
+            <div class="project-footer">
+               <p class="project-details-text">${project.details}</p>
+               <span class="project-date-bottom">${project.year}</span>
+            </div>
           </div>
         `).join('')}
       </div>

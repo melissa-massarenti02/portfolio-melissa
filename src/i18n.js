@@ -58,21 +58,25 @@ export const translations = {
         skills: {
             title: "Competenze Tecniche",
             projectsTitle: "Progetti in Evidenza",
-            projectsIntro: "Alcuni dei progetti presentati sono prototipi privati...",
+            projectsIntro: "Alcuni dei progetti presentati sono prototipi privati o legati alla ricerca accademica; per ragioni di proprietà intellettuale e brevetti, il codice sorgente non è pubblico. Tuttavia, sono disponibile a discutere dell'architettura tecnica durante un colloquio.",
             projects: [
                 {
-                    title: "Fanta-lessons: Gamified Study System",
-                    description: "Applicazione progettata per incrementare la produttività universitaria...",
-                    technologies: ["Javascript", "Firebase", "Node.js"],
+                    title: "Fanta-lessons: Sistema di studio gamificato",
+                    image: "fanta-lezioni.png",
+                    description: "Un'applicazione progettata per aumentare la produttività universitaria attraverso la logica degli incentivi e il monitoraggio degli obiettivi. Incentrato sulla User Experience (UX) e sulla psicologia della motivazione.",
+                    technologies: ["Javascript", "Firebase", "Node.js", "Vercel"],
                     status: "Prototipo Privato",
-                    details: "🔒 Progetto Privato - IP Riservata"
+                    details: "🔒 Progetto Privato - IP Riservata",
+                    year: "2026"
                 },
                 {
-                    title: "Kylix: Embedded Alcohol Control System",
-                    description: "Sistema hardware/software integrato per locali pubblici...",
-                    technologies: ["C++", "ESP32", "Sensors", "PHP"],
-                    status: "Fase R&D",
-                    details: "🔒 Tesi Sperimentale - Brevetto in corso"
+                    title: "Kylix: Sistema integrato per il controllo dell'alcolcolismo minorile",
+                    image: "kylix.png",
+                    description: "Un sistema hardware/software integrato per luoghi pubblici volto a prevenire il consumo di alcol da parte dei minorenni. Dispone di gestione del flusso e verifica automatizzata, sviluppati come progetto di tesi sperimentale.",
+                    technologies: ["C++", "ESP32", "Arduino", "HTML", "CSS", "Javascript", "PHP", "MySQL"],
+                    status: "Fase Ricerca e Sviluppo",
+                    details: "🔒 Tesi Sperimentale - Brevetto in corso",
+                    year: "2024"
                 }
             ],
         },
@@ -186,17 +190,21 @@ export const translations = {
             projects: [
                 {
                 title: "Fanta-lessons: Gamified Study System",
+                image: "fanta-lezioni.png",
                 description: "An application designed to boost university productivity through incentive logic and goal tracking. Focused on User Experience (UX) and the psychology of motivation.",
                 technologies: ["Javascript", "Firebase", "Node.js", "Vercel"],
                 status: "Private Prototype",
-                details: "🔒 Private Project - IP Reserved"
+                details: "🔒 Private Project - IP Reserved",
+                year: "2026"
                 },
                 {
                 title: "Kylix: Embedded Alcohol Control",
+                image: "kylix.png",
                 description: "An integrated hardware/software system for public venues aimed at preventing underage drinking. Features flow management and automated verification, developed as an experimental thesis project.",
-                technologies: ["C++", "ESP32", "Sensors", "PHP", "MySQL"],
+                technologies: ["C++", "ESP32", "Arduino", "HTML", "CSS", "Javascript", "PHP", "MySQL"],
                 status: "R&D Phase",
-                details: "🔒 Experimental Thesis - Patent Pending"
+                details: "🔒 Experimental Thesis - Patent Pending",
+                year: "2024"
                 }
             ],
         },
