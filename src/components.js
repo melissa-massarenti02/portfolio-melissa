@@ -128,7 +128,7 @@ export const Projects = (t) => {
   return `
     <section id="projects" class="section container">
       <h2 class="section-title" data-reveal>${data.projectsTitle}</h2>
-      <p style="margin-bottom: 2.5rem; color: var(--text-muted); max-width: 800px;" data-reveal>
+      <p style="margin-bottom: 2.5rem; color: var(--text-muted);" data-reveal>
         ${data.projectsIntro}
       </p>
 

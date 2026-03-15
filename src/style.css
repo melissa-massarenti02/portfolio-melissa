@@ -611,7 +611,7 @@ header .logo {
   color: var(--text-muted);
 }
 
-/* Project Grid & Cards */
+/* --- Project Grid & Cards --- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -622,25 +622,35 @@ header .logo {
 .project-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
+  padding: 20px; /* Assicura che ci sia spazio tra il bordo card e l'immagine */
 }
 
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
+/* Container Immagine: Dimensione Fissa e Arrotondata */
+.project-image {
+  width: 100%;
+  height: 220px; /* Altezza prefissata uguale per tutte */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background: var(--bg-panna-alt);
 }
 
-.tag {
-  background: var(--accent-lilla-soft);
-  color: var(--text-dark);
-  padding: 5px 12px;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Taglia l'immagine senza deformarla */
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.08);
+}
+
+/* Contenuto */
+.project-content {
+  flex-grow: 1; /* Spinge il footer verso il basso */
 }
 
 .project-status-badge {
@@ -662,20 +672,43 @@ header .logo {
   box-shadow: 0 0 10px var(--accent-lilla);
 }
 
+.project-card h3 {
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.tag {
+  background: var(--accent-lilla-soft);
+  color: var(--text-dark);
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Footer: Dettagli e Data */
+.project-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .project-details-text {
   font-size: 0.85rem;
   font-style: italic;
   color: var(--text-muted);
   border-top: 1px solid var(--border-color);
   padding-top: 15px;
-  margin-top: auto; 
-  margin-bottom: 5px; 
-}
-
-.project-footer {
-  display: flex;
-  flex-direction: column; 
-  margin-top: auto;
+  margin-top: 10px;
 }
 
 .project-date-bottom {
@@ -686,12 +719,12 @@ header .logo {
   text-align: right;
   opacity: 0.8;
   letter-spacing: 0.5px;
+  transition: var(--transition-smooth);
 }
 
 .project-card:hover .project-date-bottom {
   opacity: 1;
-  transform: translateX(-2px);
-  transition: var(--transition-smooth);
+  transform: translateX(-5px);
 }
 
 /* Paddock Enhanced */
