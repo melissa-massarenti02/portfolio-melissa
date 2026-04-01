@@ -204,17 +204,32 @@ export const Passions = (t) => `
         </div>
       </div>
 
-      <div class="management-section glass-card" data-reveal style="margin-bottom: 60px;">
-        <h3 class="accent-text" style="font-size: 1.6rem; margin-bottom: 10px;">${t.passions.management.title}</h3>
-        <h4 style="font-size: 1.2rem; margin-bottom: 5px;">${t.passions.management.role}</h4>
-        <span class="p-date" style="margin-bottom: 20px;">${t.passions.management.period}</span>
-        
-        <p style="margin-bottom: 30px;">${t.passions.management.text}</p>
-        
-        <h4 style="margin-bottom: 15px;">${t.passions.management.responsibilitiesTitle}</h4>
-        <ul class="custom-list">
-          ${t.passions.management.points.map(point => `<li>${point}</li>`).join('')}
-        </ul>
+      <div class="management-section glass-card" data-reveal style="margin-bottom: 60px;">  
+        <div class="management-header" style="margin-bottom: 30px;">
+          <h3 class="accent-text" style="font-size: 1.6rem; margin-bottom: 10px;">${t.passions.management.title}</h3>
+          <h4 style="font-size: 1.2rem; margin-bottom: 5px;">${t.passions.management.role}</h4>
+          <span class="p-date" style="display: block; margin-bottom: 15px; opacity: 0.8;">${t.passions.management.period}</span>
+          <p style="margin-bottom: 0;">${t.passions.management.text}</p>
+        </div>
+
+        <div class="management-details-grid" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 40px; align-items: start; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+          
+          <div class="management-details">
+            <h4 style="margin-bottom: 15px;">${t.passions.management.responsibilitiesTitle}</h4>
+            <ul class="custom-list">
+              ${t.passions.management.points.map(point => `<li>${point}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="management-image-column" style="display: flex; justify-content: center; align-items: center;">
+            <div class="management-image-wrapper" style="width: 100%; max-width: 280px; aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; border: 4px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <img src="${import.meta.env.BASE_URL}assets/${t.passions.management.image}" 
+                    alt="${t.passions.management.title}" 
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <div class="race-slider" data-reveal="zoom">

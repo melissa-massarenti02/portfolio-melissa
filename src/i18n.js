@@ -104,6 +104,7 @@ export const translations = {
                 role: "Responsabile Comunicazione e Brand Identity | Team Rally",
                 period: "Stagione 2026 – In corso",
                 text: "In questo ruolo ricopro la <strong>gestione integrale</strong> dell'ecosistema comunicativo di un equipaggio di rally, coordinando la transizione verso una <strong>presenza digitale professionale</strong> e strutturata. Il progetto mi permette di applicare le competenze maturate nel mio percorso di studi (ICT e Ingegneria) a un contesto ad alte prestazioni, unendo <strong>rigore tecnico e creatività</strong>.",
+                image: "manage_role.jpeg",
                 responsibilitiesTitle: "Le mie principali responsabilità includono:",
                 points: [
                     "<strong>Visual & Livery Design:</strong> Progettazione e sviluppo del concept grafico della vettura, curando la coerenza estetica e la visibilità degli sponsor tecnici.",
