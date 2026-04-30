@@ -61,6 +61,15 @@ export const translations = {
             projectsIntro: "Alcuni dei progetti presentati sono prototipi privati o legati alla ricerca accademica; per ragioni di proprietà intellettuale e brevetti, il codice sorgente non è pubblico. Tuttavia, sono disponibile a discutere dell'architettura tecnica durante un colloquio.",
             projects: [
                 {
+                    title: "Merch Ufficiale 2026: web app ordini merch team di rally.",
+                    image: "official_merch.png",
+                    description: "Una web app dedicata alla gestione dei preordini del merchandising ufficiale per un team di rally. Progettata con un focus particolare sulla coerenza del brand e l'efficienza operativa.",
+                    technologies: ["Javascript", "Node.js", "Html", "CSS", "Render", "Firebase"],
+                    status: "Web App Deployata",
+                    details: "Progetto su commissione - https://melissa-massarenti02.github.io/alessandro-colombo/",
+                    year: "2026"
+                },
+                {
                     title: "Fanta-lessons: Sistema di studio gamificato",
                     image: "fanta-lezioni.png",
                     description: "Un'applicazione progettata per aumentare la produttività universitaria attraverso la logica degli incentivi e il monitoraggio degli obiettivi. Incentrato sulla User Experience (UX) e sulla psicologia della motivazione.",
@@ -189,6 +198,15 @@ export const translations = {
             projectsTitle: "Featured Projects",
             projectsIntro: "Some of the projects presented are private prototypes or linked to academic research; for intellectual property and patent reasons, the source code is not public. However, I am available to discuss the technical architecture during an interview.",
             projects: [
+                {
+                    title: "Official Merch 2026: rally team merchandise order web app.",
+                    image: "official_merch.png",
+                    description: "A web app dedicated to managing pre-orders of official merchandise for a rally team. Designed with a particular focus on brand consistency and operational efficiency.",
+                    technologies: ["Javascript", "Node.js", "Html", "CSS", "Render", "Firebase"],
+                    status: "Web App Deployata",
+                    details: "Commissioned project - https://melissa-massarenti02.github.io/alessandro-colombo/",
+                    year: "2026"
+                },
                 {
                 title: "Fanta-lessons: Gamified Study System",
                 image: "fanta-lezioni.png",
