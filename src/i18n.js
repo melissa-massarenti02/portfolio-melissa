@@ -97,7 +97,7 @@ export const translations = {
             licensesTitle: "Licenze Conseguite",
             competitionsTitle: "Principali Gare",
             licenses: [
-                { date: "In corso", title: "Verificatore Tecnico" },
+                { date: "2026", title: "Verificatore Tecnico" },
                 { date: "2024", title: "Commissario di Percorso Qualificato (CPQ)" },
                 { date: "2024", title: "Commissario di Percorso (CP)" }
             ],
@@ -235,7 +235,7 @@ export const translations = {
             licensesTitle: "Professional Licenses",
             competitionsTitle: "Main Events",
             licenses: [
-                { date: "Ongoing", title: "Technical Verifier" },
+                { date: "2026", title: "Technical Verifier" },
                 { date: "2024", title: "Qualified Stage Marshal (CPQ)" },
                 { date: "2024", title: "Stage Marshal (CP)" }
             ],
