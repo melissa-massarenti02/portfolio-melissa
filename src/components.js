@@ -1,3 +1,5 @@
+import { site } from './i18n.js'
+ 
 export const Hero = (t) => `
   <section id="home" class="hero">
     <div class="scroll-progress"></div>
@@ -9,11 +11,12 @@ export const Hero = (t) => `
         <p>${t.hero.description}</p>
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary magnetic">${t.hero.cta}</a>
+        </div>
       </div>
     </div>
   </section>
 `;
-
+ 
 export const About = (t) => `
   <section id="about" class="section section-about">
     <div class="container">
@@ -37,7 +40,7 @@ export const About = (t) => `
     </div>
   </section>
 `;
-
+ 
 export const Education = (t) => `
   <section id="education" class="section">
     <div class="container">
@@ -60,38 +63,21 @@ export const Education = (t) => `
     </div>
   </section>
 `;
-
+ 
 export const ExperienceSkills = (t) => `
   <section id="experience" class="section">
     <div class="container">
       <h2 class="section-title" data-reveal>${t.skills.title}</h2>
       <div class="skills-grid">
+        ${site.skills.map(s => `
         <div class="skill-category glass-card" data-reveal="zoom">
-          <h3>Web & CMS</h3>
+          <h3>${s.title}</h3>
           <ul class="custom-list">
-            <li>HTML5 / CSS3 / JavaScript</li>
-            <li>PHP / J-Query / Angular</li>
-            <li>Bootstrap / WordPress</li>
+            ${s.items.filter(Boolean).map(i => `<li>${i}</li>`).join('')}
           </ul>
-        </div>
-        <div class="skill-category glass-card" data-reveal="zoom">
-          <h3>Software & Data</h3>
-          <ul class="custom-list">
-            <li>Python / Java</li>
-            <li>C / C++</li>
-            <li>SQL / MySQL / Git</li>
-          </ul>
-        </div>
-        <div class="skill-category glass-card" data-reveal="zoom">
-          <h3>Hardware & Systems</h3>
-          <ul class="custom-list">
-            <li>Arduino / IoT</li>
-            <li>Linux / Virtual Machines</li>
-            <li>Wireshark / Network Engineering</li>
-          </ul>
-        </div>
+        </div>`).join('')}
       </div>
-
+ 
       <div class="logo-slider" data-reveal>
         <div class="logo-track">
           <!-- Slide duplicates for infinite scroll -->
@@ -121,17 +107,17 @@ export const ExperienceSkills = (t) => `
     </div>
   </section>
 `;
-
+ 
 export const Projects = (t) => {
   const data = t.skills; 
-
+ 
   return `
     <section id="projects" class="section container">
       <h2 class="section-title" data-reveal>${data.projectsTitle}</h2>
       <p style="margin-bottom: 2.5rem; color: var(--text-muted);" data-reveal>
         ${data.projectsIntro}
       </p>
-
+ 
       <div class="projects-grid">
         ${data.projects.map(project => `
           <div class="glass-card project-card" data-reveal="zoom">
@@ -151,7 +137,7 @@ export const Projects = (t) => {
                 ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
               </div>
             </div>
-
+ 
             <div class="project-footer">
                <p class="project-details-text">${project.details}</p>
                <span class="project-date-bottom">${project.year}</span>
@@ -162,7 +148,7 @@ export const Projects = (t) => {
     </section>
   `;
 };
-
+ 
 export const Passions = (t) => `
   <section id="passions" class="section section-passions">
     <div class="container">
@@ -182,7 +168,7 @@ export const Passions = (t) => `
           </div>
         </div>
       </div>
-
+ 
       <div class="passions-details-grid" style="margin-bottom: 60px;">
         <div class="passions-column glass-card" data-reveal="left">
           <h3 class="accent-text">${t.passions.licensesTitle}</h3>
@@ -203,7 +189,7 @@ export const Passions = (t) => `
           </ul>
         </div>
       </div>
-
+ 
       <div class="management-section glass-card" data-reveal style="margin-bottom: 60px;">  
         <div class="management-header" style="margin-bottom: 30px;">
           <h3 class="accent-text" style="font-size: 1.6rem; margin-bottom: 10px;">${t.passions.management.title}</h3>
@@ -211,7 +197,7 @@ export const Passions = (t) => `
           <span class="p-date" style="display: block; margin-bottom: 15px; opacity: 0.8;">${t.passions.management.period}</span>
           <p style="margin-bottom: 0;">${t.passions.management.text}</p>
         </div>
-
+ 
         <div class="management-details-grid" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 40px; align-items: start; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
           
           <div class="management-details">
@@ -220,7 +206,7 @@ export const Passions = (t) => `
               ${t.passions.management.points.map(point => `<li>${point}</li>`).join('')}
             </ul>
           </div>
-
+ 
           <div class="management-image-column" style="display: flex; justify-content: center; align-items: center;">
             <div class="management-image-wrapper" style="width: 100%; max-width: 280px; aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; border: 4px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
                 <img src="${import.meta.env.BASE_URL}assets/${t.passions.management.image}" 
@@ -228,31 +214,19 @@ export const Passions = (t) => `
                     style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
           </div>
-
+ 
         </div>
       </div>
-
+ 
       <div class="race-slider" data-reveal="zoom">
         <div class="race-track">
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/rally2.jpg" alt="Rally Action 1"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/gara.jpg" alt="Melissa Work"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/rally1.jpg" alt="Rally Action 2"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/race4.jpg" alt="Rally Action 3"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/race5.jpg" alt="In action"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/race6.jpg" alt="Rally Action 4"></div>
-          <!-- Duplicates -->
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/rally2.jpg" alt="Rally Action 1"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/gara.jpg" alt="Melissa Work"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/rally1.jpg" alt="Rally Action 2"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/race4.jpg" alt="Rally Action 3"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/race5.jpg" alt="In action"></div>
-          <div class="race-item"><img src="${import.meta.env.BASE_URL}assets/race6.jpg" alt="Rally Action 4"></div>
+          ${[...site.raceImages, ...site.raceImages].filter(Boolean).map((f, i) => `<div class="race-item"><img src="${import.meta.env.BASE_URL}assets/${f}" alt="Rally ${i + 1}"></div>`).join('')}
         </div>
       </div>
     </div>
   </section>
 `;
-
+ 
 export const Contact = (t) => `
   <section id="contact" class="section section-contact">
     <div class="container">
@@ -260,19 +234,19 @@ export const Contact = (t) => `
       <div class="contact-grid">
         <div class="contact-info" data-reveal="left">
           <p>${t.contact.text}</p>
-          <a href="mailto:massti2002@gmail.com" class="contact-email magnetic">massti2002@gmail.com</a>
+          <a href="mailto:${site.email}" class="contact-email magnetic">${site.email}</a>
           
           <div class="social-links">
-            <a href="https://www.facebook.com/melissa.massarenti" target="_blank" class="social-icon magnetic" aria-label="Facebook">
+            <a href="${site.socials.facebook}" target="_blank" class="social-icon magnetic" aria-label="Facebook">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook">
             </a>
-            <a href="https://instagram.com/meli_massa02" target="_blank" class="social-icon magnetic" aria-label="Instagram">
+            <a href="${site.socials.instagram}" target="_blank" class="social-icon magnetic" aria-label="Instagram">
               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram" class="icon-instagram">
             </a>
-            <a href="https://www.linkedin.com/in/melissa-massarenti-aa73a7233/" target="_blank" class="social-icon magnetic" aria-label="LinkedIn">
+            <a href="${site.socials.linkedin}" target="_blank" class="social-icon magnetic" aria-label="LinkedIn">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
             </a>
-            <a href="https://github.com/melissa-massarenti02" target="_blank" class="social-icon magnetic" aria-label="GitHub">
+            <a href="${site.socials.github}" target="_blank" class="social-icon magnetic" aria-label="GitHub">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
             </a>
           </div>
@@ -293,7 +267,7 @@ export const Contact = (t) => `
     </div>
   </section>
 `;
-
+ 
 export const Footer = (t) => `
   <footer class="footer">
     <div class="container">
@@ -301,4 +275,5 @@ export const Footer = (t) => `
     </div>
   </footer>
 `;
-
+ 
+ 
