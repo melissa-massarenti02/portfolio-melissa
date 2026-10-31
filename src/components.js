@@ -1,279 +1,164 @@
-import { site } from './i18n.js'
+import './style.css'
+import { Hero, About, Education, ExperienceSkills, Projects, Passions, Contact, Footer } from './components.js'
+import { translations, site } from './i18n.js'
  
-export const Hero = (t) => `
-  <section id="home" class="hero">
-    <div class="scroll-progress"></div>
-    <div class="custom-cursor"></div>
-    <div class="container">
-      <div class="hero-content" data-reveal="left">
-        <span class="hero-pretitle">${t.hero.pretitle}</span>
-        <h1>${t.hero.title}</h1>
-        <p>${t.hero.description}</p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary magnetic">${t.hero.cta}</a>
-        </div>
-      </div>
-    </div>
-  </section>
-`;
+const app = document.querySelector('#app')
+const langBtn = document.querySelector('#lang-toggle')
  
-export const About = (t) => `
-  <section id="about" class="section section-about">
-    <div class="container">
-      <h2 class="section-title" data-reveal>${t.about.title}</h2>
-      <div class="about-top">
-        <div class="about-image" data-reveal="zoom">
-          <img src="${import.meta.env.BASE_URL}assets/melissa.jpg" alt="Melissa Massarenti">
-        </div>
-        <div class="languages-box glass-card" data-reveal="right">
-          <h3>${t.about.langTitle}</h3>
-          <ul class="lang-list custom-list">
-            <li><strong>Italiano:</strong> ${t.about.it}</li>
-            <li><strong>Inglese:</strong> ${t.about.en}</li>
-            <li><strong>Francese:</strong> ${t.about.fr}</li>
-          </ul>
-        </div>
-      </div>
-      <div class="about-text" data-reveal>
-        <p>${t.about.text}</p>
-      </div>
-    </div>
-  </section>
-`;
+let currentLanguage = 'it'
  
-export const Education = (t) => `
-  <section id="education" class="section">
-    <div class="container">
-      <h2 class="section-title" data-reveal>${t.education.title}</h2>
-      <div class="timeline">
-        ${t.education.items.map((item) => `
-          <div class="timeline-item" data-reveal="left">
-            <div class="edu-logo-box">
-              <img src="${import.meta.env.BASE_URL}assets/${item.logo}" alt="Logo" class="edu-logo">
-            </div>
-            <div class="edu-content">
-              <span class="date">${item.date}</span>
-              <h3>${item.title}</h3>
-              <p class="institution">${item.institution}</p>
-              <p class="details">${item.details}</p>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-  </section>
-`;
+const renderApp = () => {
+  const t = translations[currentLanguage]
  
-export const ExperienceSkills = (t) => `
-  <section id="experience" class="section">
-    <div class="container">
-      <h2 class="section-title" data-reveal>${t.skills.title}</h2>
-      <div class="skills-grid">
-        ${site.skills.map(s => `
-        <div class="skill-category glass-card" data-reveal="zoom">
-          <h3>${s.title}</h3>
-          <ul class="custom-list">
-            ${s.items.filter(Boolean).map(i => `<li>${i}</li>`).join('')}
-          </ul>
-        </div>`).join('')}
-      </div>
+  // Update Nav
+  document.querySelector('.nav-links').innerHTML = `
+    <li><a href="#home" class="active">${t.nav.home}</a></li>
+    <li><a href="#about">${t.nav.about}</a></li>
+    <li><a href="#experience">${t.nav.experience}</a></li>
+    <li><a href="#projects">${t.nav.projects}</a></li>
+    <li><a href="#passions">${t.nav.passions}</a></li>
+    <li><a href="#contact">${t.nav.contact}</a></li>
+  `
  
-      <div class="logo-slider" data-reveal>
-        <div class="logo-track">
-          <!-- Slide duplicates for infinite scroll -->
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"></div>
-          
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"></div>
-          <div class="slide"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-`;
+  // Render Sections
+  app.innerHTML = `
+    ${Hero(t)}
+    ${About(t)}
+    ${Education(t)}
+    ${ExperienceSkills(t)}
+    ${Projects(t)}
+    ${Passions(t)}
+    ${Contact(t)}
+    ${Footer(t)}
+  `
  
-export const Projects = (t) => {
-  const data = t.skills; 
+  langBtn.innerText = currentLanguage === 'it' ? 'EN' : 'IT'
  
-  return `
-    <section id="projects" class="section container">
-      <h2 class="section-title" data-reveal>${data.projectsTitle}</h2>
-      <p style="margin-bottom: 2.5rem; color: var(--text-muted);" data-reveal>
-        ${data.projectsIntro}
-      </p>
+  attachListeners()
+}
  
-      <div class="projects-grid">
-        ${data.projects.map(project => `
-          <div class="glass-card project-card" data-reveal="zoom">
-            <div class="project-image">
-              <img src="${import.meta.env.BASE_URL}assets/${project.image}" alt="${project.title}">
-            </div>
-            
-            <div class="project-content">
-              <div class="project-header">
-                <span class="project-status-badge">${project.status}</span>
-              </div>
-              
-              <h3>${project.title}</h3>
-              <p>${project.description}</p>
-              
-              <div class="project-tags">
-                ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
-              </div>
-            </div>
+const attachListeners = () => {
+  // 0. Contact form (Formspree; fallback mailto if no formId set)
+  const form = document.querySelector('#contact-form')
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const btn = form.querySelector('button')
+      const label = btn.textContent
+      const it = currentLanguage === 'it'
+      if (!site.formId) {
+        window.location.href = 'mailto:' + site.email
+        return
+      }
+      btn.disabled = true
+      try {
+        const r = await fetch('https://formspree.io/f/' + site.formId, {
+          method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form)
+        })
+        btn.textContent = r.ok ? (it ? 'Messaggio inviato ✓' : 'Message sent ✓') : (it ? 'Errore, riprova' : 'Error, try again')
+        if (r.ok) form.reset()
+      } catch { btn.textContent = it ? 'Errore, riprova' : 'Error, try again' }
+      setTimeout(() => { btn.textContent = label; btn.disabled = false }, 3500)
+    })
+  }
  
-            <div class="project-footer">
-               <p class="project-details-text">${project.details}</p>
-               <span class="project-date-bottom">${project.year}</span>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    </section>
-  `;
-};
+  // 1. Reveal Animations (Enhanced)
+  const revealElements = document.querySelectorAll('[data-reveal]')
+  const revealOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active')
+      }
+    })
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  })
+  revealElements.forEach(el => revealOnScroll.observe(el))
  
-export const Passions = (t) => `
-  <section id="passions" class="section section-passions">
-    <div class="container">
-      <div class="paddock-header" data-reveal>
-        <h2 class="section-title">${t.passions.title}</h2>
-        <img src="${import.meta.env.BASE_URL}assets/aci-logo.png" alt="ACI Sport Logo" class="aci-logo">
-      </div>
-      
-      <div class="official-intro">
-        <div class="official-grid" style="margin-bottom: 60px;">
-          <div class="official-image" data-reveal="left">
-            <img src="${import.meta.env.BASE_URL}assets/rally3.jpg" alt="Melissa Official">
-          </div>
-          <div class="official-text" data-reveal="right">
-            <h3 class="accent-text" style="font-size: 1.8rem; margin-bottom: 20px;">${t.passions.storyTitle}</h3>
-            <p>${t.passions.storyText}</p>
-          </div>
-        </div>
-      </div>
+  // 2. Custom Cursor Logic
+  const cursor = document.querySelector('.custom-cursor')
+  if (cursor) {
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px'
+      cursor.style.top = e.clientY + 'px'
+    })
  
-      <div class="passions-details-grid" style="margin-bottom: 60px;">
-        <div class="passions-column glass-card" data-reveal="left">
-          <h3 class="accent-text">${t.passions.licensesTitle}</h3>
-          <div class="paddock-timeline">
-            ${t.passions.licenses.map(lic => `
-              <div class="p-timeline-item">
-                <span class="p-date">${lic.date}</span>
-                <h4>${lic.title}</h4>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-        
-        <div class="passions-column glass-card" data-reveal="right">
-          <h3 class="accent-text">${t.passions.competitionsTitle}</h3>
-          <ul class="custom-list">
-            ${t.passions.competitions.map(comp => `<li>${comp}</li>`).join('')}
-          </ul>
-        </div>
-      </div>
+    const hoverables = document.querySelectorAll('a, button, .magnetic, .skill-category')
+    hoverables.forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'))
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'))
+    })
+  }
  
-      <div class="management-section glass-card" data-reveal style="margin-bottom: 60px;">  
-        <div class="management-header" style="margin-bottom: 30px;">
-          <h3 class="accent-text" style="font-size: 1.6rem; margin-bottom: 10px;">${t.passions.management.title}</h3>
-          <h4 style="font-size: 1.2rem; margin-bottom: 5px;">${t.passions.management.role}</h4>
-          <span class="p-date" style="display: block; margin-bottom: 15px; opacity: 0.8;">${t.passions.management.period}</span>
-          <p style="margin-bottom: 0;">${t.passions.management.text}</p>
-        </div>
+  // 3. Magnetic Buttons
+  const magneticEls = document.querySelectorAll('.magnetic')
+  magneticEls.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const { left, top, width, height } = el.getBoundingClientRect()
+      const x = (e.clientX - left - width / 2) * 0.35
+      const y = (e.clientY - top - height / 2) * 0.35
+      el.style.transform = `translate(${x}px, ${y}px)`
+    })
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'translate(0, 0)'
+    })
+  })
  
-        <div class="management-details-grid" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 40px; align-items: start; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
-          
-          <div class="management-details">
-            <h4 style="margin-bottom: 15px;">${t.passions.management.responsibilitiesTitle}</h4>
-            <ul class="custom-list">
-              ${t.passions.management.points.map(point => `<li>${point}</li>`).join('')}
-            </ul>
-          </div>
+  // 6. Global Parallax Controller
+  const root = document.documentElement
+  window.addEventListener('mousemove', (e) => {
+    // Standardize coordinates relative to center
+    const x = (e.clientX - window.innerWidth / 2)
+    const y = (e.clientY - window.innerHeight / 2)
+    root.style.setProperty('--mx', `${x}px`)
+    root.style.setProperty('--my', `${y}px`)
+  })
  
-          <div class="management-image-column" style="display: flex; justify-content: center; align-items: center;">
-            <div class="management-image-wrapper" style="width: 100%; max-width: 280px; aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; border: 4px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                <img src="${import.meta.env.BASE_URL}assets/${t.passions.management.image}" 
-                    alt="${t.passions.management.title}" 
-                    style="width: 100%; height: 100%; object-fit: cover; display: block;">
-            </div>
-          </div>
+  window.addEventListener('scroll', () => {
+    root.style.setProperty('--scroll', `${window.scrollY}px`)
+  })
  
-        </div>
-      </div>
+  // 4. Header Scroll Effect
+  const header = document.querySelector('header')
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled')
+    } else {
+      header.classList.remove('scrolled')
+    }
+  })
  
-      <div class="race-slider" data-reveal="zoom">
-        <div class="race-track">
-          ${[...site.raceImages, ...site.raceImages].filter(Boolean).map((f, i) => `<div class="race-item"><img src="${import.meta.env.BASE_URL}assets/${f}" alt="Rally ${i + 1}"></div>`).join('')}
-        </div>
-      </div>
-    </div>
-  </section>
-`;
+  // 5. Scroll Progress
+  const progressBar = document.querySelector('.scroll-progress')
+  window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+    const progress = (window.scrollY / totalHeight) * 100
+    if (progressBar) progressBar.style.width = progress + '%'
+  })
+}
  
-export const Contact = (t) => `
-  <section id="contact" class="section section-contact">
-    <div class="container">
-      <h2 class="section-title" data-reveal>${t.contact.title}</h2>
-      <div class="contact-grid">
-        <div class="contact-info" data-reveal="left">
-          <p>${t.contact.text}</p>
-          <a href="mailto:${site.email}" class="contact-email magnetic">${site.email}</a>
-          
-          <div class="social-links">
-            <a href="${site.socials.facebook}" target="_blank" class="social-icon magnetic" aria-label="Facebook">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook">
-            </a>
-            <a href="${site.socials.instagram}" target="_blank" class="social-icon magnetic" aria-label="Instagram">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram" class="icon-instagram">
-            </a>
-            <a href="${site.socials.linkedin}" target="_blank" class="social-icon magnetic" aria-label="LinkedIn">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
-            </a>
-            <a href="${site.socials.github}" target="_blank" class="social-icon magnetic" aria-label="GitHub">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-            </a>
-          </div>
-        </div>
-        <form class="contact-form" id="contact-form" data-reveal="right">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="${t.contact.form.name}" required>
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" placeholder="${t.contact.form.email}" required>
-          </div>
-          <div class="form-group">
-            <textarea name="message" placeholder="${t.contact.form.message}" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary magnetic">${t.contact.form.submit}</button>
-        </form>
-      </div>
-    </div>
-  </section>
-`;
+langBtn.addEventListener('click', () => {
+  currentLanguage = currentLanguage === 'it' ? 'en' : 'it'
+  renderApp()
+})
  
-export const Footer = (t) => `
-  <footer class="footer">
-    <div class="container">
-      <p class="footer-text">${t.footer.text}</p>
-    </div>
-  </footer>
-`;
+// Initial Render
+renderApp()
  
+// Active Link Tracking (Global)
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section')
+  const navLinks = document.querySelectorAll('.nav-links a')
+  let current = ''
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop
+    if (pageYOffset >= (sectionTop - 200)) {
+      current = section.getAttribute('id')
+    }
+  })
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href').includes(current))
+  })
+})
  
